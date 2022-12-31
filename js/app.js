@@ -10,9 +10,14 @@ let message_container = document.querySelector(".message-container");
 let message_close_btn = document.querySelector(".message-close-btn-container");
 
 let downloadable = document.querySelector(".downloadable");
+let download_close_btn = document.querySelector(".download-close-btn-container");
 
 message_close_btn.onclick = () => {
     clear_and_hide_message_bar();
+}
+
+download_close_btn.onclick = () => {
+    turn_off_all_movables_except(0);
 }
 
 gen_form.addEventListener("submit", async function (e) {
