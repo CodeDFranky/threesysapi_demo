@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <title>3SysAPI_Demo</title>
+</head>
+
+<body>
+    <div class="message-bar">
+        <div class="message-container"></div>
+        <div class="message-close-btn-container">
+            <img src="./images/close.png">
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="threesys-header">
+            <span>3</span>
+            <span>.Sys</span>
+            <span>api</span>
+        </div>
+        <div class="pages-and-main-container">
+            <div class="main">
+                <div class="main-sub-container">
+                    <div class="nav movable active">
+                        <div class="choices">
+                            <div class="choice-label">
+                                Please select one
+                            </div>
+                            <span class="choice choice-generate">Generate</span>
+                            <span class="choice choice-verify">Verify</span>
+                        </div>
+                        <div class="forms">
+                            <form id="gen-form">
+                                <input type="file" name="file" id="gen-file" class="file">
+                                <label for="gen-file" class="file-label">Upload a file</label>
+                                <div>
+                                    <label id="label-exception" for="gen-location">Location</label>
+                                    <input type="text" name="location" id="gen-location" value="bottom-right">
+                                </div>
+                                <input type="submit" id="gen-submit">
+                            </form>
+                            <form id="ver-form">
+                                <input type="file" name="file" id="ver-file" class="file">
+                                <label for="ver-file" class="file-label">Upload a file</label>
+                                <input type="submit" id="ver-submit">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="download movable">
+                        <div class="download-disclaimer">
+                            <div class="download-close-btn-container">
+                                <img src="./images/close.png">
+                            </div>
+                            <span>Your document has been signed!</span>
+                            <span>Please download the signed file</span>
+                            <span>Our API does not serve GET requests at the moment so if you fail to download this
+                                file, you will not be able to get another copy.</span>
+                        </div>
+                        <a class="downloadable">Download Pdf</a>
+                    </div>
+                    <div class="loading movable">
+                        <span>Please wait as we process your request</span>
+                        <div class="lds-grid">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pages">
+                <div class="page"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="./js/app.js"></script>
+<script src="./js/nav.js"></script>
+
+</html>
