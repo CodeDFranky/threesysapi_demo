@@ -191,12 +191,13 @@ body {
 
             .choice {
               width: min-content;
-              font-size: calc(70px + .1vw);
+              font-size: calc(45px + .1vw);
               font-family: PJSR;
               text-transform: uppercase;
               cursor: pointer;
               position: relative;
               transition: .3s;
+              white-space: nowrap;
 
               &.deactivate {
                 transform: scale(.5) translateX(-50%);
@@ -250,7 +251,7 @@ body {
               &:nth-of-type(1) {
                 gap: 1em;
                 grid-template-rows: min-content 1fr;
-                grid-template-columns: 1fr min-content;
+                grid-template-columns: min-content 1fr;
                 grid-template-areas: 
                 "file file"
                 "location submit";

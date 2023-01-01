@@ -249,13 +249,14 @@ body {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  font-size: calc(70px + .1vw);
+  font-size: calc(45px + .1vw);
   font-family: PJSR;
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
   -webkit-transition: .3s;
   transition: .3s;
+  white-space: nowrap;
 }
 
 .main-container .pages-and-main-container .main .main-sub-container .nav .choices .choice.deactivate {
@@ -322,9 +323,9 @@ body {
   -ms-grid-rows: min-content 1fr;
       grid-template-rows: -webkit-min-content 1fr;
       grid-template-rows: min-content 1fr;
-  -ms-grid-columns: 1fr min-content;
-      grid-template-columns: 1fr -webkit-min-content;
-      grid-template-columns: 1fr min-content;
+  -ms-grid-columns: min-content 1fr;
+      grid-template-columns: -webkit-min-content 1fr;
+      grid-template-columns: min-content 1fr;
       grid-template-areas: "file file" "location submit";
 }
 
