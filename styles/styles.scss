@@ -135,7 +135,7 @@ body {
 
   .threesys-header {
     display: flex;
-    font-size: calc(30px + .1vw);
+    font-size: calc(20px + .1vw);
     span {
       &:nth-of-type(1) {
         font-family: PJSB;
@@ -184,9 +184,12 @@ body {
             margin-bottom: 5em;
 
             .choice-label {
-              font-size: calc(30px + .1vw);
+              font-size: calc(20px + .1vw);
               font-family: PJSEL;
-              margin-bottom: 1em;
+              
+              &:nth-of-type(1) {
+                margin-bottom: 1em;
+              }
             }
 
             .choice {
@@ -442,7 +445,7 @@ body {
           }
 
           .downloadable {
-            font-size: calc(30px + .1vw);
+            font-size: calc(20px + .1vw);
             font-family: PJSB;
             text-transform: uppercase;
             cursor: pointer;

@@ -159,7 +159,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: calc(30px + .1vw);
+  font-size: calc(20px + .1vw);
 }
 
 .main-container .threesys-header span:nth-of-type(1) {
@@ -240,8 +240,11 @@ body {
 }
 
 .main-container .pages-and-main-container .main .main-sub-container .nav .choices .choice-label {
-  font-size: calc(30px + .1vw);
+  font-size: calc(20px + .1vw);
   font-family: PJSEL;
+}
+
+.main-container .pages-and-main-container .main .main-sub-container .nav .choices .choice-label:nth-of-type(1) {
   margin-bottom: 1em;
 }
 
@@ -558,7 +561,7 @@ body {
 }
 
 .main-container .pages-and-main-container .main .download .downloadable {
-  font-size: calc(30px + .1vw);
+  font-size: calc(20px + .1vw);
   font-family: PJSB;
   text-transform: uppercase;
   cursor: pointer;
