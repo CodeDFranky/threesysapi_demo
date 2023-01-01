@@ -72,13 +72,13 @@ const request_api = async (url, form_data) => {
             message_close_btn.classList.remove("active");
             message_bar.classList.add("fail");
             message_bar.classList.remove("pass");
-            message_container.classList.add("centered-text");
+            // message_container.classList.add("centered-text");
         }
         else {
             message_close_btn.classList.add("active");
             message_bar.classList.remove("fail");
             message_bar.classList.add("pass");
-            message_container.classList.remove("centered-text");
+            // message_container.classList.remove("centered-text");
         }
         return response.blob();
     } catch (error) {

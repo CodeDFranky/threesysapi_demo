@@ -37,11 +37,20 @@
                         </div>
                         <div class="forms">
                             <form id="gen-form">
-                                <input type="file" name="file" id="gen-file" class="file">
                                 <label for="gen-file" class="file-label">Upload a file</label>
-                                <div>
+                                <input type="file" name="file" id="gen-file" class="file">
+                                <div class="location-select">
                                     <label id="label-exception" for="gen-location">Location</label>
-                                    <input type="text" name="location" id="gen-location" value="bottom-right">
+                                    <div class="custom-location-select">
+                                        <select name="location" id="gen-location">
+                                            <option value="top-left">Top left</option>
+                                            <option value="top-right">Top right</option>
+                                            <option value="bottom-left">Bottom left</option>
+                                            <option value="bottom-right" selected>Bottom right</option>
+                                        </select>
+                                        <span class="focus"></span>
+                                    </div>
+                                    <!-- <input type="text" name="location" id="gen-location" value="bottom-right"> -->
                                 </div>
                                 <input type="submit" id="gen-submit">
                             </form>
