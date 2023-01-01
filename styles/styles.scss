@@ -135,7 +135,7 @@ body {
 
   .threesys-header {
     display: flex;
-    font-size: calc(20px + .1vw);
+    font-size: calc(25px + .1vw);
     span {
       &:nth-of-type(1) {
         font-family: PJSB;
@@ -283,7 +283,7 @@ body {
 
             label {
               color: #ffffff;
-              font-size: calc(20px + .1vw);
+              font-size: calc(15px + .1vw);
               font-family: PJSEL;
               white-space: nowrap;
             }

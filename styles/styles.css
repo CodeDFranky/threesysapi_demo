@@ -159,7 +159,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: calc(20px + .1vw);
+  font-size: calc(25px + .1vw);
 }
 
 .main-container .threesys-header span:nth-of-type(1) {
@@ -369,7 +369,7 @@ body {
 
 .main-container .pages-and-main-container .main .main-sub-container .nav .forms label {
   color: #ffffff;
-  font-size: calc(20px + .1vw);
+  font-size: calc(15px + .1vw);
   font-family: PJSEL;
   white-space: nowrap;
 }
