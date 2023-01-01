@@ -34,6 +34,7 @@ download_close_btn.onclick = () => {
 }
 
 tutorial_close_btn.onclick = () => {
+    about_btn.classList.remove("deactivate");
     turn_off_all_movables_except(last_seen_movable);
 }
 
@@ -185,5 +186,6 @@ about_btn.onclick = () => {
             last_seen_movable = i;
         }
     });
+    about_btn.classList.add("deactivate");
     turn_off_all_movables_except(3);
 }
