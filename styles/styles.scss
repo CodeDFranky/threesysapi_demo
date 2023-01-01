@@ -170,10 +170,13 @@ body {
         position: relative;
 
         .nav {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+
+          .movable-sub-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
 
           .choices {
             display: flex;
@@ -383,10 +386,13 @@ body {
         }
 
         .download {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+
+          .movable-sub-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
 
           .download-close-btn-container {
             align-self: end;
@@ -455,12 +461,14 @@ body {
         }
 
         .loading {
-          pointer-events: none;
-          user-select: none;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          .movable-sub-container {
+            pointer-events: none;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
 
           span {
             margin-bottom: 1em;
@@ -471,7 +479,13 @@ body {
         }
 
         .movable {
+          width: 100%;
+          height: 100%;
           position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
           opacity: 0;
           pointer-events: none;
           transition: .3s;

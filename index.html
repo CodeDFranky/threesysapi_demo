@@ -28,63 +28,69 @@
             <div class="main">
                 <div class="main-sub-container">
                     <div class="nav movable active">
-                        <div class="choices">
-                            <div class="choice-label">
-                                Please select one
-                            </div>
-                            <span class="choice choice-generate">Generate</span>
-                            <span class="choice choice-verify">Verify</span>
-                        </div>
-                        <div class="forms">
-                            <form id="gen-form">
-                                <label for="gen-file" class="file-label">Upload a file</label>
-                                <input type="file" name="file" id="gen-file" class="file">
-                                <div class="location-select">
-                                    <label id="label-exception" for="gen-location">Location</label>
-                                    <div class="custom-location-select">
-                                        <select name="location" id="gen-location">
-                                            <option value="top-left">Top left</option>
-                                            <option value="top-right">Top right</option>
-                                            <option value="bottom-left">Bottom left</option>
-                                            <option value="bottom-right" selected>Bottom right</option>
-                                        </select>
-                                        <span class="focus"></span>
-                                    </div>
-                                    <!-- <input type="text" name="location" id="gen-location" value="bottom-right"> -->
+                        <div class="movable-sub-container">
+                            <div class="choices">
+                                <div class="choice-label">
+                                    Please select one
                                 </div>
-                                <input type="submit" id="gen-submit">
-                            </form>
-                            <form id="ver-form">
-                                <input type="file" name="file" id="ver-file" class="file">
-                                <label for="ver-file" class="file-label">Upload a file</label>
-                                <input type="submit" id="ver-submit">
-                            </form>
+                                <span class="choice choice-generate">Generate</span>
+                                <span class="choice choice-verify">Verify</span>
+                            </div>
+                            <div class="forms">
+                                <form id="gen-form">
+                                    <label for="gen-file" class="file-label">Upload a file</label>
+                                    <input type="file" name="file" id="gen-file" class="file">
+                                    <div class="location-select">
+                                        <label id="label-exception" for="gen-location">Location</label>
+                                        <div class="custom-location-select">
+                                            <select name="location" id="gen-location">
+                                                <option value="top-left">Top left</option>
+                                                <option value="top-right">Top right</option>
+                                                <option value="bottom-left">Bottom left</option>
+                                                <option value="bottom-right" selected>Bottom right</option>
+                                            </select>
+                                            <span class="focus"></span>
+                                        </div>
+                                        <!-- <input type="text" name="location" id="gen-location" value="bottom-right"> -->
+                                    </div>
+                                    <input type="submit" id="gen-submit">
+                                </form>
+                                <form id="ver-form">
+                                    <input type="file" name="file" id="ver-file" class="file">
+                                    <label for="ver-file" class="file-label">Upload a file</label>
+                                    <input type="submit" id="ver-submit">
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="download movable">
-                        <div class="download-disclaimer">
-                            <div class="download-close-btn-container">
-                                <img src="./images/close.png">
+                        <div class="movable-sub-container">
+                            <div class="download-disclaimer">
+                                <div class="download-close-btn-container">
+                                    <img src="./images/close.png">
+                                </div>
+                                <span>Your document has been signed!</span>
+                                <span>Please download the signed file</span>
+                                <span>Our API does not serve GET requests at the moment so if you fail to download this
+                                    file, you will not be able to get another copy.</span>
                             </div>
-                            <span>Your document has been signed!</span>
-                            <span>Please download the signed file</span>
-                            <span>Our API does not serve GET requests at the moment so if you fail to download this
-                                file, you will not be able to get another copy.</span>
+                            <a class="downloadable">Download Pdf</a>
                         </div>
-                        <a class="downloadable">Download Pdf</a>
                     </div>
                     <div class="loading movable">
-                        <span>Please wait as we process your request</span>
-                        <div class="lds-grid">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                        <div class="movable-sub-container">
+                            <span>Please wait as we process your request</span>
+                            <div class="lds-grid">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
