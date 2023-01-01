@@ -363,7 +363,7 @@ body {
 
 .main-container .pages-and-main-container .main .main-sub-container .nav .forms input {
   color: #ffffff;
-  font-size: calc(20px + .1vw);
+  font-size: calc(15px + .1vw);
   font-family: PJSEL;
 }
 
@@ -387,7 +387,7 @@ body {
   border-radius: 999999px;
   padding: 0.5em 0.75em;
   color: #ffffff;
-  font-size: calc(20px + .1vw);
+  font-size: calc(15px + .1vw);
   font-family: PJSEL;
   cursor: pointer;
   background-color: #000000;
