@@ -1,3 +1,4 @@
+
 let api_gen_link = "https://threesysapi.up.railway.app/generate"
 let api_ver_link = "https://threesysapi.up.railway.app/verify"
 
@@ -7,10 +8,22 @@ let ver_form = document.querySelector('#ver-form');
 let movables = document.querySelectorAll(".movable");
 let message_bar = document.querySelector(".message-bar");
 let message_container = document.querySelector(".message-container");
-let message_close_btn = document.querySelector(".message-close-btn-container");
 
 let downloadable = document.querySelector(".downloadable");
+
+let message_close_btn = document.querySelector(".message-close-btn-container");
 let download_close_btn = document.querySelector(".download-close-btn-container");
+let tutorial_close_btn = document.querySelector(".tutorial-close-btn-container");
+
+let choices = document.querySelectorAll(".choice");
+let forms = document.querySelectorAll("form");
+
+let file_labels = document.querySelectorAll(".file-label");
+let file_inputs = document.querySelectorAll(".file");
+
+let about_btn = document.querySelector(".about-btn");
+
+let last_seen_movable = 0;
 
 message_close_btn.onclick = () => {
     clear_and_hide_message_bar();
@@ -18,6 +31,10 @@ message_close_btn.onclick = () => {
 
 download_close_btn.onclick = () => {
     turn_off_all_movables_except(0);
+}
+
+tutorial_close_btn.onclick = () => {
+    turn_off_all_movables_except(last_seen_movable);
 }
 
 gen_form.addEventListener("submit", async function (e) {
@@ -130,4 +147,43 @@ function clear_and_hide_message_bar() {
         message_container.innerText = "";
         message_bar.classList.remove("active");
     }
+}
+
+choices.forEach((choice, i) => {
+    choice.onclick = () => {
+        switch (i) {
+            case 0:
+                // generate
+                forms[0].classList.add("active");
+                forms[1].classList.remove("active");
+                choices[0].classList.remove("deactivate");
+                choices[1].classList.add("deactivate");
+                break;
+            case 1:
+                // verify
+                forms[0].classList.remove("active");
+                forms[1].classList.add("active");
+                choices[0].classList.add("deactivate");
+                choices[1].classList.remove("deactivate");
+                break;
+        }
+    }
+});
+
+file_inputs.forEach((file_input, i) => {
+    file_input.addEventListener("change", function () {
+        file_name = this.value.split("\\").splice(-1, 1)[0];
+        file_labels[i].innerText = file_name || "Upload a file";
+    });
+})
+
+
+
+about_btn.onclick = () => {
+    movables.forEach((movable, i) => {
+        if (movable.classList.contains("active")) {
+            last_seen_movable = i;
+        }
+    });
+    turn_off_all_movables_except(3);
 }

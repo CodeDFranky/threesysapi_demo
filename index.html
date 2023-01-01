@@ -20,9 +20,14 @@
     </div>
     <div class="main-container">
         <div class="threesys-header">
-            <span>3</span>
-            <span>.Sys</span>
-            <span>api</span>
+            <div class="title">
+                <span>3</span>
+                <span>.Sys</span>
+                <span>api</span>
+            </div>
+            <div class="about-btn">
+                What is this demo?
+            </div>
         </div>
         <div class="pages-and-main-container">
             <div class="main">
@@ -92,6 +97,48 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tutorial movable">
+                        <div class="movable-sub-container">
+                            <div class="nav">
+                                <div class="tutorial-close-btn-container">
+                                    <img src="./images/close.png">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h1>What is this demo?</h1>
+                                <h3>What we have here is a demo application making use of our developed API. Our API
+                                    functions
+                                    in either one of two ways: “/generate” or “/verify.”
+                                </h3>
+                                <h2>Sign a document (using /generate)</h2>
+                                <p>
+                                    When the app uses this endpoint, the API requires 2 things:
+                                    <br><br>
+                                    - a PDF document
+                                    <br>
+                                    - and a location of where you would like our novel, Stenographic Data Matrix, to be
+                                    placed
+                                    on. You have 4 options: top-left, top-right, bottom-left and bottom-right
+                                    <br><br>
+                                    The API will work to determine whether or not your document possesses the traits we
+                                    look
+                                    for when placing our signature.
+                                    <br>
+                                    If it does, then it will place a signature on the document and return it to you;
+                                    Otherwise, you will be prompted as what could be the cause of the issue.
+                                </p>
+                                <h2>Upload a signed document (using /verify)</h2>
+                                <p>
+                                    When the app uses this endpoint, the API requires only 1 thing:
+                                    <br><br>
+                                    - a PDF document
+                                    <br><br>
+                                    The API will work to determine whether or not your document is one that is valid,
+                                    meaning it has been signed with our API, or otherwise.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="pages">
@@ -103,6 +150,5 @@
 
 
 <script src="./js/app.js"></script>
-<script src="./js/nav.js"></script>
 
 </html>

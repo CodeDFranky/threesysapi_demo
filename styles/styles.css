@@ -159,19 +159,67 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: calc(25px + .1vw);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.main-container .threesys-header span:nth-of-type(1) {
+.main-container .threesys-header .title {
+  font-size: calc(25px + .1vw);
+  margin-bottom: 1em;
+}
+
+.main-container .threesys-header .title span:nth-of-type(1) {
   font-family: PJSB;
 }
 
-.main-container .threesys-header span:nth-of-type(2) {
+.main-container .threesys-header .title span:nth-of-type(2) {
   font-family: PJSELI;
 }
 
-.main-container .threesys-header span:nth-of-type(3) {
+.main-container .threesys-header .title span:nth-of-type(3) {
   font-family: PJSEL;
+}
+
+.main-container .threesys-header .about-btn {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  white-space: nowrap;
+  font-family: PJSR;
+  font-size: calc(15px + .1vw);
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-container .threesys-header .about-btn.deactivate {
+  opacity: 0;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  pointer-events: none;
+}
+
+.main-container .threesys-header .about-btn:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.main-container .threesys-header .about-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #888888;
+  -webkit-transition: .2s;
+  transition: .2s;
+  pointer-events: none;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 .main-container .pages-and-main-container {
@@ -609,6 +657,106 @@ body {
   text-align: center;
 }
 
+.main-container .pages-and-main-container .main .tutorial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .pages-and-main-container .main .tutorial .movable-sub-container {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: min-content 1fr;
+      grid-template-rows: -webkit-min-content 1fr;
+      grid-template-rows: min-content 1fr;
+}
+
+.main-container .pages-and-main-container .main .tutorial .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin: 1em 0;
+}
+
+.main-container .pages-and-main-container .main .tutorial .nav .tutorial-close-btn-container {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-container .pages-and-main-container .main .tutorial .nav .tutorial-close-btn-container:hover {
+  -webkit-transition: 0s;
+  transition: 0s;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-container .pages-and-main-container .main .tutorial .nav .tutorial-close-btn-container img {
+  width: calc(25px + .1vw);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.main-container .pages-and-main-container .main .tutorial .content {
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3em;
+}
+
+.main-container .pages-and-main-container .main .tutorial .content h1 {
+  font-family: PJSR;
+}
+
+.main-container .pages-and-main-container .main .tutorial .content h3 {
+  font-family: PJSL;
+}
+
+.main-container .pages-and-main-container .main .tutorial .content h2 {
+  font-family: PJSL;
+  color: #046ED0;
+}
+
+.main-container .pages-and-main-container .main .tutorial .content p {
+  font-family: PJSEL;
+}
+
 .main-container .pages-and-main-container .main .movable {
   width: 100%;
   height: 100%;
@@ -624,6 +772,8 @@ body {
           justify-content: center;
   opacity: 0;
   pointer-events: none;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -631,6 +781,8 @@ body {
 .main-container .pages-and-main-container .main .movable.active {
   opacity: 1;
   pointer-events: auto;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .lds-grid {
