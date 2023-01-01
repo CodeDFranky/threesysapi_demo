@@ -25,10 +25,14 @@ gen_form.addEventListener("submit", async function (e) {
     clear_and_hide_message_bar();
     turn_off_all_movables_except(2);
     let form_data = new FormData(gen_form);
-    let response_blob = await request_api(api_gen_link, form_data);
+    let response = await request_api(api_gen_link, form_data);
+    let response_blob = await response.blob();
     if (response_blob.type == "application/pdf") {
         let response_url = await parse_blob(response_blob.type, response_blob);
-        set_downloadable(response_url);
+        let header_content_disposition = response.headers.get("Content-Disposition");
+        let parts = header_content_disposition.split(';');
+        let file_name = parts[1].split('=')[1];
+        set_downloadable(response_url, file_name);
         turn_off_all_movables_except(1);
     }
     else {
@@ -49,7 +53,8 @@ ver_form.addEventListener("submit", async function (e) {
     clear_and_hide_message_bar();
     turn_off_all_movables_except(2);
     let form_data = new FormData(ver_form);
-    let response_blob = await request_api(api_ver_link, form_data);
+    let response = await request_api(api_ver_link, form_data);
+    let response_blob = await response.blob();
     let response_json_string = await parse_blob(response_blob.type, response_blob);
     let response_json = JSON.parse(response_json_string);
     let message = response_json.message;
@@ -80,7 +85,7 @@ const request_api = async (url, form_data) => {
             message_bar.classList.add("pass");
             // message_container.classList.remove("centered-text");
         }
-        return response.blob();
+        return response;
     } catch (error) {
         console.log(error)
     }
@@ -100,8 +105,8 @@ function parse_blob(type, blob) {
     });
 }
 
-function set_downloadable(url) {
-    downloadable.setAttribute("download", "signed.pdf");
+function set_downloadable(url, file_name) {
+    downloadable.setAttribute("download", file_name);
     downloadable.href = url;
 }
 
