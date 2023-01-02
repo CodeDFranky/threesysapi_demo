@@ -104,45 +104,144 @@
                                     <img src="./images/close.png">
                                 </div>
                             </div>
-                            <div class="content">
-                                <h1>What is this demo?</h1>
-                                <h3>What we have here is a demo application making use of our developed API. Our API
-                                    functions
-                                    in either one of two ways: “/generate” or “/verify.”
-                                </h3>
-                                <h2>Sign a document (using /generate)</h2>
-                                <p>
-                                    When the app uses this endpoint, the API requires 2 things:
-                                    <br><br>
-                                    - a PDF document
-                                    <br>
-                                    - and a location of where you would like our novel, Stenographic Data Matrix, to be
-                                    placed
-                                    on. You have 4 options: top-left, top-right, bottom-left and bottom-right
-                                    <br><br>
-                                    The API will work to determine whether or not your document possesses the traits we
-                                    look
-                                    for when placing our signature.
-                                    <br>
-                                    If it does, then it will place a signature on the document and return it to you;
-                                    Otherwise, you will be prompted as what could be the cause of the issue.
-                                </p>
-                                <h2>Upload a signed document (using /verify)</h2>
-                                <p>
-                                    When the app uses this endpoint, the API requires only 1 thing:
-                                    <br><br>
-                                    - a PDF document
-                                    <br><br>
-                                    The API will work to determine whether or not your document is one that is valid,
-                                    meaning it has been signed with our API, or otherwise.
-                                </p>
+                            <div class="pages-container">
+                                <div class="pages">
+                                    <div class="page">
+                                        Welcome!
+                                        <p>Please press the "next" button to proceed.</p>
+                                    </div>
+                                    <div class="page">
+                                        What we have here is a demo application making use of our
+                                        developed API.
+                                        <br><br>
+                                        Our API functions in either one of two ways: “/generate” or
+                                        “/verify.”
+                                    </div>
+                                    <div class="page">
+                                        When you get to our web-app's main page, you will be greeted with two options:
+                                        <div>
+                                            <span>"Sign a document"</span>
+                                            or
+                                            <span>"Upload a signed document"</span>
+                                        </div>
+                                        You may choose from either but, we highly recommend the "Sign a document"
+                                        option.
+                                    </div>
+                                    <div class="page">
+                                        <span>Sign a document</span>
+                                        <span>This option utilizes the /generate endpoint of our API</span>
+                                        <span>Requirements?</span>
+                                        <p>
+                                            • a PDF document
+                                            <br>
+                                            • and a location of where you would like our, Stenographic Data Matrix, to
+                                            be
+                                            placed
+                                            on. You have 4 options: top-left, top-right, bottom-left and bottom-right
+                                        </p>
+                                        <span>Steganographic Data Matrix (Steg DM)?</span>
+                                        <p>
+                                            First of all, we need to understand what steganography is.
+                                            <br>
+                                            As defined by Google, Steganography is, "the practice of concealing messages
+                                            or
+                                            information within other nonsecret text or data."
+                                        </p>
+                                        <p>
+                                            Next, what is a Data Matrix?
+                                            <br>
+                                            A Data Matrix is a two-dimensional code of black and white squares or dots
+                                            arranged in either a square or rectangular pattern, also known as a matrix.
+                                        </p>
+                                        <p>
+                                            Here is an example of one:
+                                            <img src="./images/example-dm.gif">
+                                        </p>
+                                        <p>
+                                            So what is a Steg DM?
+                                            <br>
+                                            In layman's terms, a Steganographic Data Matrix is a DM with a secret inside
+                                            of
+                                            it. This secret is dertermined by our very own unique algorithn and is what
+                                            determines the uniqueness of not only the DM itself, but the document it is
+                                            placed on.
+                                        </p>
+                                        <span>What about the API?</span>
+                                        <p>
+                                            Now that we've established the very core of our API, the Steg DM, let us
+                                            proceed
+                                            once again to the API and the signing of a document.
+                                            <br>
+                                            The API will work to determine whether or not your document possesses the
+                                            traits
+                                            we look for when placing our signature.
+                                            <br>
+                                            If it does, then it will place a signature on the document, and return it to
+                                            you;
+                                            Otherwise, you will be prompted as what could be the cause of the issue.
+                                        </p>
+                                        <span>What about the Demo?</span>
+                                        <p>
+                                            1. Select a pdf file you'd like to have signed.
+                                            <br>
+                                            2. Select a location where you'd like to have the Steg DM to be placed on.
+                                            <br>
+                                            3. Submit.
+                                            <br><br>
+                                            3.1. If your document passes, it will be signed and you will be given a copy
+                                            to download. You must download it!
+                                            <br>
+                                            3.2. Otherwise, you will be prompted as to the possible cause of the issue.
+                                            Use another document or make adjustments to your chosen one to better
+                                            accomodate for the Steg DM.
+                                        </p>
+                                    </div>
+                                    <div class="page">
+                                        <span>Upload a Signed Document</span>
+                                        <span>This option utilizes the /verify endpoint of our API</span>
+                                        <span>Requirements?</span>
+                                        <p>
+                                            • a PDF document
+                                        </p>
+                                        <span>What about the API?</span>
+                                        <p>
+                                            The API will work to determine whether or not your document is one that is
+                                            valid,
+                                            meaning it has been signed with our API's Steg DM, or otherwise.
+                                        </p>
+                                        <span>What about the Demo?</span>
+                                        <p>
+                                            1. Select a pdf file you'd like to have signed. Preferably one with a Steg
+                                            DM but, you may choose otherwise to see what the API will respond with.
+                                            <br>
+                                            2. Submit.
+                                            <br>
+                                            3. The API will inform you, through the demo, whether the document you have
+                                            submitted is one
+                                            that is signed with our Steg DM and is original.
+                                            <br><br>
+                                            3.1 You may be tempted to extract the Steg DM from a document and place it
+                                            on another to make it valid but our API will catch this and notify you that
+                                            the document that you have created is one that is falsified.
+                                        </p>
+                                    </div>
+                                    <div class="page">
+                                        To start using this demo, please close the tutorial with the "x" icon located at
+                                        the top
+                                        right area of the page. You may revisit this tutorial at anytime with the "What
+                                        is this
+                                        demo?" button to appear below the "3.Sysapi" logo at the top left area of the
+                                        page.</div>
+                                </div>
+                                <div class="page-nav">
+                                    <div class="pn-btn">Prev</div>
+                                    <div class="current-page-indicator">1</div>
+                                    <div class="pn-btn">Next</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="pages">
-                <div class="page"></div>
             </div>
         </div>
     </div>

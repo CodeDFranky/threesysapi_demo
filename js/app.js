@@ -13,7 +13,7 @@ let downloadable = document.querySelector(".downloadable");
 
 let message_close_btn = document.querySelector(".message-close-btn-container");
 let download_close_btn = document.querySelector(".download-close-btn-container");
-let tutorial_close_btn = document.querySelector(".tutorial-close-btn-container");
+let about_close_btn = document.querySelector(".tutorial-close-btn-container");
 
 let choices = document.querySelectorAll(".choice");
 let forms = document.querySelectorAll("form");
@@ -23,7 +23,13 @@ let file_inputs = document.querySelectorAll(".file");
 
 let about_btn = document.querySelector(".about-btn");
 
+let pages = document.querySelectorAll(".page");
+let page_btns = document.querySelectorAll(".pn-btn");
+let current_page_indicator = document.querySelector(".current-page-indicator");
+
 let last_seen_movable = 0;
+let current_page_number = 0;
+let previous_page_number = current_page_number;
 
 message_close_btn.onclick = () => {
     clear_and_hide_message_bar();
@@ -33,7 +39,7 @@ download_close_btn.onclick = () => {
     turn_off_all_movables_except(0);
 }
 
-tutorial_close_btn.onclick = () => {
+about_close_btn.onclick = () => {
     about_btn.classList.remove("deactivate");
     turn_off_all_movables_except(last_seen_movable);
 }
@@ -167,6 +173,20 @@ function update_file_input(file_el, i) {
     file_labels[i].innerText = file_name || "Upload a file";
 }
 
+function view_page(go_to_page_number) {
+    pages[go_to_page_number].classList.remove("move-to-left");
+    pages[go_to_page_number].classList.remove("move-to-right");
+    pages[previous_page_number].classList.add((go_to_page_number < previous_page_number) ? "move-to-right" : "move-to-left");
+    current_page_indicator.innerText = current_page_number + 1;
+}
+
+function check_current_page() {
+    page_btns[0].classList.remove("deactivate");
+    page_btns[1].classList.remove("deactivate");
+    if (current_page_number == 0) page_btns[0].classList.add("deactivate");
+    if (current_page_number == pages.length - 1) page_btns[1].classList.add("deactivate");
+}
+
 choices.forEach((choice, i) => {
     choice.onclick = () => {
         switch (i) {
@@ -193,3 +213,33 @@ file_inputs.forEach((file_input, i) => {
         update_file_input(file_input, i);
     });
 })
+
+page_btns.forEach((btn, i) => {
+    btn.onclick = () => {
+        switch (i) {
+            case 0:
+                if (current_page_number > 0) {
+                    previous_page_number = current_page_number;
+                    current_page_number--;
+                }
+
+                break;
+            case 1:
+                if (current_page_number < (pages.length - 1)) {
+                    previous_page_number = current_page_number;
+                    current_page_number++;
+                }
+                break;
+        }
+        if (current_page_number >= 0 && current_page_number <= pages.length - 1) {
+            view_page(current_page_number);
+            check_current_page();
+        }
+    }
+})
+
+pages.forEach((page, i) => {
+    if (i != 0) page.classList.add("move-to-right");
+})
+check_current_page();
+about_btn.click();
