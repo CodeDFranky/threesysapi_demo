@@ -38,6 +38,16 @@ tutorial_close_btn.onclick = () => {
     turn_off_all_movables_except(last_seen_movable);
 }
 
+about_btn.onclick = () => {
+    movables.forEach((movable, i) => {
+        if (movable.classList.contains("active")) {
+            last_seen_movable = i;
+        }
+    });
+    about_btn.classList.add("deactivate");
+    turn_off_all_movables_except(3);
+}
+
 gen_form.addEventListener("submit", async function (e) {
     e.preventDefault();
     clear_and_hide_message_bar();
@@ -62,8 +72,8 @@ gen_form.addEventListener("submit", async function (e) {
         turn_off_all_movables_except(0);
         temporary_message_bar();
     }
-
-
+    gen_form.reset();
+    update_file_input(file_inputs[0], 0);
 })
 
 ver_form.addEventListener("submit", async function (e) {
@@ -83,9 +93,11 @@ ver_form.addEventListener("submit", async function (e) {
     message_bar.classList.add("active");
     turn_off_all_movables_except(0);
     temporary_message_bar();
+    ver_form.reset();
+    update_file_input(file_inputs[1], 1);
 })
 
-const request_api = async (url, form_data) => {
+async function request_api(url, form_data) {
     try {
         let response = await fetch(url, {
             method: "POST",
@@ -150,6 +162,11 @@ function clear_and_hide_message_bar() {
     }
 }
 
+function update_file_input(file_el, i) {
+    file_name = file_el.value.split("\\").splice(-1, 1)[0];
+    file_labels[i].innerText = file_name || "Upload a file";
+}
+
 choices.forEach((choice, i) => {
     choice.onclick = () => {
         switch (i) {
@@ -173,19 +190,6 @@ choices.forEach((choice, i) => {
 
 file_inputs.forEach((file_input, i) => {
     file_input.addEventListener("change", function () {
-        file_name = this.value.split("\\").splice(-1, 1)[0];
-        file_labels[i].innerText = file_name || "Upload a file";
+        update_file_input(file_input, i);
     });
 })
-
-
-
-about_btn.onclick = () => {
-    movables.forEach((movable, i) => {
-        if (movable.classList.contains("active")) {
-            last_seen_movable = i;
-        }
-    });
-    about_btn.classList.add("deactivate");
-    turn_off_all_movables_except(3);
-}
