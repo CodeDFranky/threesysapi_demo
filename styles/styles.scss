@@ -580,7 +580,7 @@ body {
               .page {
                 width: 100%;
                 height: 100%;
-                padding: 1em;
+                padding: 5em;
                 position: absolute;
                 // background-color: #ffffff;
                 // color: #000000;
@@ -631,7 +631,6 @@ body {
                 }
                 &:nth-of-type(4) {
                   overflow-y: auto;
-                  padding: 5em;
 
                   span {
                     &:nth-of-type(1) {
@@ -664,7 +663,6 @@ body {
 
                 &:nth-of-type(5) {
                   overflow-y: auto;
-                  padding: 5em;
 
                   span {
                     &:nth-of-type(1) {
@@ -695,7 +693,6 @@ body {
                   }
                 }
                 &:nth-of-type(6) {
-                  padding: 5em;
                   align-items: center;
                   justify-content: center;
                 }
