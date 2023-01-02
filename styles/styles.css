@@ -757,7 +757,6 @@ body {
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page {
   width: 100%;
   height: 100%;
-  padding: 5em;
   position: absolute;
   -webkit-box-shadow: inset 0 0 25px #ffffff65;
           box-shadow: inset 0 0 25px #ffffff65;
@@ -789,6 +788,7 @@ body {
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(1) {
+  padding: 1em;
   font-size: calc(80px + .1vw);
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -803,6 +803,7 @@ body {
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(2) {
+  padding: 5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -812,6 +813,7 @@ body {
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(3) {
+  padding: 5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -830,6 +832,7 @@ body {
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) {
+  padding: 5em;
   overflow-y: auto;
 }
 
@@ -867,6 +870,7 @@ body {
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(5) {
+  padding: 5em;
   overflow-y: auto;
 }
 
@@ -904,6 +908,7 @@ body {
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(6) {
+  padding: 5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
