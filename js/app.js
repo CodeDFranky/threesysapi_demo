@@ -238,8 +238,5 @@ page_btns.forEach((btn, i) => {
     }
 })
 
-pages.forEach((page, i) => {
-    if (i != 0) page.classList.add("move-to-right");
-})
 check_current_page();
 about_btn.click();
