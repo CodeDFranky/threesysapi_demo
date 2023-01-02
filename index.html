@@ -114,7 +114,7 @@
                                         What we have here is a demo application making use of our
                                         developed API.
                                         <br><br>
-                                        Our API functions in either one of two ways: “/generate” or
+                                        Our API functions with either one of two endpoints: “/generate” or
                                         “/verify.”
                                     </div>
                                     <div class="page">
@@ -124,7 +124,8 @@
                                             or
                                             <span>"Upload a signed document"</span>
                                         </div>
-                                        You may choose from either but, we highly recommend the "Sign a document"
+                                        You may choose from either but, we highly recommend to start with the "Sign a
+                                        document"
                                         option.
                                     </div>
                                     <div class="page">
@@ -171,7 +172,7 @@
                                             Now that we've established the very core of our API, the Steg DM, let us
                                             proceed
                                             once again to the API and the signing of a document.
-                                            <br>
+                                            <br><br>
                                             The API will work to determine whether or not your document possesses the
                                             traits
                                             we look for when placing our signature.
@@ -182,7 +183,12 @@
                                         </p>
                                         <span>What about the Demo?</span>
                                         <p>
-                                            1. Select a pdf file you'd like to have signed.
+                                            1. Select a pdf file you'd like to have signed. For the document to be
+                                            accepted, it must possess enough pixel white space in the area you have
+                                            designated for the signature to be placed on. The Steg DM's physical size is
+                                            akin to 1/2 inch so please keep that in mind when choosing a document. Also,
+                                            the API will only place a Steg DM signature on the first page of any given
+                                            document.
                                             <br>
                                             2. Select a location where you'd like to have the Steg DM to be placed on.
                                             <br>
@@ -211,7 +217,7 @@
                                         </p>
                                         <span>What about the Demo?</span>
                                         <p>
-                                            1. Select a pdf file you'd like to have signed. Preferably one with a Steg
+                                            1. Select a pdf file. Preferably one with a Steg
                                             DM but, you may choose otherwise to see what the API will respond with.
                                             <br>
                                             2. Submit.
