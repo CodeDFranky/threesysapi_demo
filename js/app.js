@@ -31,6 +31,92 @@ let last_seen_movable = 0;
 let current_page_number = 0;
 let previous_page_number = current_page_number;
 
+async function request_api(url, form_data) {
+    try {
+        let response = await fetch(url, {
+            method: "POST",
+            body: form_data
+        });
+        if (response.status >= 400) {
+            // message_close_btn.classList.remove("active");
+            message_bar.classList.add("fail");
+            message_bar.classList.remove("pass");
+            // message_container.classList.add("centered-text");
+        }
+        else {
+            // message_close_btn.classList.add("active");
+            message_bar.classList.remove("fail");
+            message_bar.classList.add("pass");
+            // message_container.classList.remove("centered-text");
+        }
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+function parse_blob(type, blob) {
+    return new Promise((resolve, _) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        switch (type) {
+            case "application/pdf":
+                reader.readAsDataURL(blob);
+                break;
+            case "application/json":
+                reader.readAsText(blob);
+        }
+    });
+}
+
+function set_downloadable(url, file_name) {
+    downloadable.setAttribute("download", file_name);
+    downloadable.href = url;
+}
+
+function turn_off_all_movables_except(chosen) {
+    movables.forEach(movable => {
+        movable.classList.remove("active");
+    });
+    movables[chosen].classList.add("active");
+}
+
+// function temporary_message_bar() {
+//     if (message_bar.classList.contains("fail")) {
+//         setTimeout(() => {
+//             message_bar.classList.remove("active");
+//         }, 7000);
+//     }
+// }
+
+function clear_and_hide_message_bar() {
+    // if (message_bar.classList.contains("pass")) {
+    //     message_container.innerText = "";
+    //     message_bar.classList.remove("active");
+    // }
+    message_container.innerText = "";
+    message_bar.classList.remove("active");
+}
+
+function update_file_input(file_el, i) {
+    file_name = file_el.value.split("\\").splice(-1, 1)[0];
+    file_labels[i].innerText = file_name || "Upload a file";
+}
+
+function view_page(go_to_page_number) {
+    pages[go_to_page_number].classList.remove("move-to-left");
+    pages[go_to_page_number].classList.remove("move-to-right");
+    pages[previous_page_number].classList.add((go_to_page_number < previous_page_number) ? "move-to-right" : "move-to-left");
+    current_page_indicator.innerText = current_page_number + 1;
+}
+
+function check_current_page() {
+    page_btns[0].classList.remove("deactivate");
+    page_btns[1].classList.remove("deactivate");
+    if (current_page_number == 0) page_btns[0].classList.add("deactivate");
+    if (current_page_number == pages.length - 1) page_btns[1].classList.add("deactivate");
+}
+
 message_close_btn.onclick = () => {
     clear_and_hide_message_bar();
 }
@@ -102,90 +188,6 @@ ver_form.addEventListener("submit", async function (e) {
     ver_form.reset();
     update_file_input(file_inputs[1], 1);
 })
-
-async function request_api(url, form_data) {
-    try {
-        let response = await fetch(url, {
-            method: "POST",
-            body: form_data
-        });
-        if (response.status >= 400) {
-            // message_close_btn.classList.remove("active");
-            message_bar.classList.add("fail");
-            message_bar.classList.remove("pass");
-            // message_container.classList.add("centered-text");
-        }
-        else {
-            // message_close_btn.classList.add("active");
-            message_bar.classList.remove("fail");
-            message_bar.classList.add("pass");
-            // message_container.classList.remove("centered-text");
-        }
-        return response;
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-function parse_blob(type, blob) {
-    return new Promise((resolve, _) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result);
-        switch (type) {
-            case "application/pdf":
-                reader.readAsDataURL(blob);
-                break;
-            case "application/json":
-                reader.readAsText(blob);
-        }
-    });
-}
-
-function set_downloadable(url, file_name) {
-    downloadable.setAttribute("download", file_name);
-    downloadable.href = url;
-}
-
-function turn_off_all_movables_except(chosen) {
-    movables.forEach(movable => {
-        movable.classList.remove("active");
-    });
-    movables[chosen].classList.add("active");
-}
-
-// function temporary_message_bar() {
-//     if (message_bar.classList.contains("fail")) {
-//         setTimeout(() => {
-//             message_bar.classList.remove("active");
-//         }, 7000);
-//     }
-// }
-
-function clear_and_hide_message_bar() {
-    if (message_bar.classList.contains("pass")) {
-        message_container.innerText = "";
-        message_bar.classList.remove("active");
-    }
-}
-
-function update_file_input(file_el, i) {
-    file_name = file_el.value.split("\\").splice(-1, 1)[0];
-    file_labels[i].innerText = file_name || "Upload a file";
-}
-
-function view_page(go_to_page_number) {
-    pages[go_to_page_number].classList.remove("move-to-left");
-    pages[go_to_page_number].classList.remove("move-to-right");
-    pages[previous_page_number].classList.add((go_to_page_number < previous_page_number) ? "move-to-right" : "move-to-left");
-    current_page_indicator.innerText = current_page_number + 1;
-}
-
-function check_current_page() {
-    page_btns[0].classList.remove("deactivate");
-    page_btns[1].classList.remove("deactivate");
-    if (current_page_number == 0) page_btns[0].classList.add("deactivate");
-    if (current_page_number == pages.length - 1) page_btns[1].classList.add("deactivate");
-}
 
 choices.forEach((choice, i) => {
     choice.onclick = () => {

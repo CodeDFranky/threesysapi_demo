@@ -90,12 +90,12 @@ body {
 
   .message-container {
     overflow-y: auto;
-    padding: 1em;
+    padding: 1em 3em;
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
     text-align: center;
-    
+
     // &.centered-text {
     //   display: flex;
     //   align-items: center;
@@ -230,7 +230,7 @@ body {
             .choice-label {
               font-size: calc(20px + .1vw);
               font-family: PJSEL;
-              
+
               &:nth-of-type(1) {
                 margin-bottom: 1em;
               }
@@ -299,7 +299,7 @@ body {
                 gap: 1em;
                 grid-template-rows: min-content 1fr;
                 grid-template-columns: min-content 1fr;
-                grid-template-areas: 
+                grid-template-areas:
                 "file file"
                 "location submit";
 
@@ -532,7 +532,7 @@ body {
           .movable-sub-container {
             width: 100%;
             height: 100%;
-            
+
             display: grid;
             grid-template-rows: min-content 1fr;
           }
@@ -594,7 +594,7 @@ body {
                 flex-direction: column;
                 font-family: PJSEL;
                 font-size: calc(17px + .1vw);
-                
+
                 transition: 1.25s;
                 &.move-to-left {
                   transform: scale(.7) translateX(-125%);
