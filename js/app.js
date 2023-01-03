@@ -157,7 +157,7 @@ function temporary_message_bar() {
     if (message_bar.classList.contains("fail")) {
         setTimeout(() => {
             message_bar.classList.remove("active");
-        }, 5000);
+        }, 7000);
     }
 }
 
