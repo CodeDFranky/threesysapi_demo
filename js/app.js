@@ -76,7 +76,7 @@ gen_form.addEventListener("submit", async function (e) {
         message_container.innerText = message;
         message_bar.classList.add("active");
         turn_off_all_movables_except(0);
-        temporary_message_bar();
+        // temporary_message_bar();
     }
     gen_form.reset();
     update_file_input(file_inputs[0], 0);
@@ -98,7 +98,7 @@ ver_form.addEventListener("submit", async function (e) {
     }
     message_bar.classList.add("active");
     turn_off_all_movables_except(0);
-    temporary_message_bar();
+    // temporary_message_bar();
     ver_form.reset();
     update_file_input(file_inputs[1], 1);
 })
@@ -110,13 +110,13 @@ async function request_api(url, form_data) {
             body: form_data
         });
         if (response.status >= 400) {
-            message_close_btn.classList.remove("active");
+            // message_close_btn.classList.remove("active");
             message_bar.classList.add("fail");
             message_bar.classList.remove("pass");
             // message_container.classList.add("centered-text");
         }
         else {
-            message_close_btn.classList.add("active");
+            // message_close_btn.classList.add("active");
             message_bar.classList.remove("fail");
             message_bar.classList.add("pass");
             // message_container.classList.remove("centered-text");
@@ -153,13 +153,13 @@ function turn_off_all_movables_except(chosen) {
     movables[chosen].classList.add("active");
 }
 
-function temporary_message_bar() {
-    if (message_bar.classList.contains("fail")) {
-        setTimeout(() => {
-            message_bar.classList.remove("active");
-        }, 7000);
-    }
-}
+// function temporary_message_bar() {
+//     if (message_bar.classList.contains("fail")) {
+//         setTimeout(() => {
+//             message_bar.classList.remove("active");
+//         }, 7000);
+//     }
+// }
 
 function clear_and_hide_message_bar() {
     if (message_bar.classList.contains("pass")) {
