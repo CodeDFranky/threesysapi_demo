@@ -914,6 +914,26 @@ body {
           justify-content: center;
 }
 
+.main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(6) a {
+  font-family: PJSB;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #046ED0;
+  border: 3px solid #046ED0;
+  border-radius: 999999px;
+  padding: 1em 3em;
+  text-align: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(6) a:hover {
+  -webkit-transition: 0s;
+  transition: 0s;
+  color: #000000;
+  background-color: #046ED0;
+}
+
 .main-container .pages-and-main-container .main .tutorial .pages-container .page-nav {
   display: -webkit-box;
   display: -ms-flexbox;

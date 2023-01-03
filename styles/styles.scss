@@ -700,6 +700,24 @@ body {
                   padding: 5em;
                   align-items: center;
                   justify-content: center;
+
+                  a {
+                    font-family: PJSB;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    color: #046ED0;
+                    border: 3px solid #046ED0;
+                    border-radius: 999999px;
+                    padding: 1em 3em;
+                    text-align: center;
+        
+                    transition: .3s;
+                    &:hover {
+                      transition: 0s;
+                      color: #000000;
+                      background-color: #046ED0;
+                    }
+                  }
                 }
               }
             }
