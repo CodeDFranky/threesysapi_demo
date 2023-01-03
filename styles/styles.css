@@ -773,14 +773,14 @@ body {
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page.move-to-left {
-  -webkit-transform: scale(0.7) translateX(-125%);
-          transform: scale(0.7) translateX(-125%);
+  -webkit-transform: scale(0.7) translateX(-150%);
+          transform: scale(0.7) translateX(-150%);
   opacity: .3;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page.move-to-right {
-  -webkit-transform: scale(0.7) translateX(125%);
-          transform: scale(0.7) translateX(125%);
+  -webkit-transform: scale(0.7) translateX(150%);
+          transform: scale(0.7) translateX(150%);
   opacity: .3;
 }
 

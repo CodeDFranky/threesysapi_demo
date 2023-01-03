@@ -597,11 +597,11 @@ body {
 
                 transition: 1.25s;
                 &.move-to-left {
-                  transform: scale(.7) translateX(-125%);
+                  transform: scale(.7) translateX(-150%);
                   opacity: .3;
                 }
                 &.move-to-right {
-                  transform: scale(.7) translateX(125%);
+                  transform: scale(.7) translateX(150%);
                   opacity: .3;
                 }
 
