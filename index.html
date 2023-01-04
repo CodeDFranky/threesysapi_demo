@@ -13,21 +13,30 @@
 
 <body>
     <div class="message-bar">
-        <div class="message-container"></div>
+        <div class="message-container">TEST</div>
         <div class="message-close-btn-container active">
             <img src="./images/close.png">
         </div>
     </div>
     <div class="main-container">
         <div class="threesys-header">
-            <div class="title">
-                <span>3</span>
-                <span>.Sys</span>
-                <span>api</span>
+            <div class="left">
+                <div class="title">
+                    <span>3</span>
+                    <span>.Sys</span>
+                    <span>api</span>
+                </div>
+                <div class="about-btn">
+                    What is this demo?
+                </div>
             </div>
-            <div class="about-btn">
-                What is this demo?
-            </div>
+            <a class="survey-btn" href="https://forms.gle/yByY6wvsZSt9Pjxf6">
+                Take the survey
+                <div class="survey-btn-hover-el">
+                    Please ensure that you have tried out the demo before proceeding to the
+                    survey
+                </div>
+            </a>
         </div>
         <div class="pages-and-main-container">
             <div class="main">
@@ -70,15 +79,13 @@
                     <div class="download movable">
                         <div class="movable-sub-container">
                             <div class="download-disclaimer">
-                                <div class="download-close-btn-container">
-                                    <img src="./images/close.png">
-                                </div>
                                 <span>Your document has been signed!</span>
                                 <span>Please download the signed file</span>
-                                <span>Our API does not serve GET requests at the moment so if you fail to download this
-                                    file, you will not be able to get another copy.</span>
                             </div>
-                            <a class="downloadable">Download Pdf</a>
+                            <div>
+                                <a class="downloadable">Download Pdf</a>
+                                <div class="download-close-btn-container">Cancel</div>
+                            </div>
                         </div>
                     </div>
                     <div class="loading movable">
@@ -135,7 +142,7 @@
                                         <p>
                                             • a PDF document
                                             <br>
-                                            • and a location of where you would like our, Stenographic Data Matrix, to
+                                            • and a location of where you would like our, Steganographic Data Matrix, to
                                             be
                                             placed
                                             on. You have 4 options: top-left, top-right, bottom-left and bottom-right
@@ -239,9 +246,9 @@
                                         demo?" button to appear below the "3.Sysapi" logo at the top left area of the
                                         page.
                                         <br><br>
-                                        Once you've finished with the demo, please proceed to,
-                                        <br><br>
-                                        <a href="https://forms.gle/yByY6wvsZSt9Pjxf6">Our survey</a>
+                                        Once you've finished with the demo, please proceed to take our survey. You may
+                                        view the survey through th, "take the survey" button: Located at the demo's main
+                                        page.
                                     </div>
                                 </div>
                                 <div class="page-nav">
@@ -249,6 +256,19 @@
                                     <div class="current-page-indicator">1</div>
                                     <div class="pn-btn">Next</div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ays-darken">
+                        <div class="are-you-sure">
+                            <span class="title">Are you sure?</span>
+                            <span>
+                                Our API does not serve GET requests at the moment so if you fail to download this
+                                file, you will not be able to get another copy.
+                            </span>
+                            <div>
+                                <span class="ays-btn ays-yes">Yes</span>
+                                <span class="ays-btn ays-no">No</span>
                             </div>
                         </div>
                     </div>

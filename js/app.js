@@ -117,12 +117,26 @@ function check_current_page() {
     if (current_page_number == pages.length - 1) page_btns[1].classList.add("deactivate");
 }
 
+let ays_darken = document.querySelector(".ays-darken");
+let are_you_sure_container = document.querySelector(".are-you-sure");
+
+let ays_btns = document.querySelectorAll(".ays-btn");
+
+let survey_btn = document.querySelector(".survey-btn");
+
+let survey_btn_hover_el = document.querySelector(".survey-btn-hover-el");
+
+function are_you_sure() {
+    ays_darken.classList.toggle("active");
+    are_you_sure_container.classList.toggle("active");
+}
+
 message_close_btn.onclick = () => {
     clear_and_hide_message_bar();
 }
 
 download_close_btn.onclick = () => {
-    turn_off_all_movables_except(0);
+    are_you_sure();
 }
 
 about_close_btn.onclick = () => {
@@ -138,6 +152,16 @@ about_btn.onclick = () => {
     });
     about_btn.classList.add("deactivate");
     turn_off_all_movables_except(3);
+}
+
+
+survey_btn.onmousemove = (e) => {
+    he_w = survey_btn_hover_el.offsetWidth;
+    he_h = survey_btn_hover_el.offsetHeight;
+    x = e.clientX;
+    y = e.clientY;
+    survey_btn_hover_el.style.left = `${x - he_w}px`;
+    survey_btn_hover_el.style.top = `${y + 20}px`;
 }
 
 gen_form.addEventListener("submit", async function (e) {
@@ -236,6 +260,20 @@ page_btns.forEach((btn, i) => {
         if (current_page_number >= 0 && current_page_number <= pages.length - 1) {
             view_page(current_page_number);
             check_current_page();
+        }
+    }
+})
+
+ays_btns.forEach((btn, i) => {
+    btn.onclick = () => {
+        switch (i) {
+            case 0:
+                are_you_sure();
+                turn_off_all_movables_except(0);
+                break;
+            case 1:
+                are_you_sure();
+                break;
         }
     }
 })

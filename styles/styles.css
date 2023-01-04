@@ -92,11 +92,11 @@ body {
 }
 
 .message-bar.pass {
-  background-color: #559820;
+  background-color: #5ca525;
 }
 
 .message-bar.fail {
-  background-color: #C52D2D;
+  background-color: #f81a1a;
 }
 
 .message-bar .message-container {
@@ -112,8 +112,17 @@ body {
 }
 
 .message-bar .message-close-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
-  padding-left: 1em;
+  padding: 1em;
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
@@ -139,7 +148,6 @@ body {
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
-  margin: 15px 15px 0 0;
 }
 
 .main-container {
@@ -156,10 +164,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main-container .threesys-header .title {
@@ -180,6 +190,44 @@ body {
 
 .main-container .threesys-header .title span:nth-of-type(3) {
   font-family: PJSEL;
+}
+
+.main-container .threesys-header .survey-btn {
+  font-family: PJSB;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 999999px;
+  padding: 1em 3em;
+  text-align: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-container .threesys-header .survey-btn:hover {
+  -webkit-transition: 0s;
+  transition: 0s;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.main-container .threesys-header .survey-btn:hover .survey-btn-hover-el {
+  opacity: 1;
+}
+
+.main-container .threesys-header .survey-btn .survey-btn-hover-el {
+  opacity: 0;
+  width: 50vw;
+  position: absolute;
+  z-index: 999999;
+  background-color: #f81a1a;
+  color: #ffffff;
+  padding: 1em;
+  border-radius: 25px;
+  pointer-events: none;
+  -webkit-transition: opacity .1s;
+  transition: opacity .1s;
 }
 
 .main-container .threesys-header .about-btn {
@@ -491,7 +539,7 @@ body {
   left: -1px;
   right: -1px;
   bottom: -1px;
-  border: 2px solid #046ED0;
+  border: 2px solid #ffffff;
   border-radius: inherit;
 }
 
@@ -537,47 +585,6 @@ body {
           justify-content: center;
 }
 
-.main-container .pages-and-main-container .main .download .download-close-btn-container {
-  -ms-flex-item-align: end;
-      align-self: end;
-  margin-bottom: 2em;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-.main-container .pages-and-main-container .main .download .download-close-btn-container:hover {
-  -webkit-transition: 0s;
-  transition: 0s;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.main-container .pages-and-main-container .main .download .download-close-btn-container img {
-  width: calc(25px + .1vw);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  pointer-events: none;
-}
-
 .main-container .pages-and-main-container .main .download .download-disclaimer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -592,7 +599,7 @@ body {
 .main-container .pages-and-main-container .main .download .download-disclaimer span:nth-of-type(1) {
   font-size: calc(23px + .1vw);
   font-family: PJSB;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .main-container .pages-and-main-container .main .download .download-disclaimer span:nth-of-type(2) {
@@ -607,25 +614,60 @@ body {
   margin-bottom: 3em;
 }
 
-.main-container .pages-and-main-container .main .download .downloadable {
+.main-container .pages-and-main-container .main .download div:nth-of-type(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2em;
+}
+
+.main-container .pages-and-main-container .main .download .downloadable, .main-container .pages-and-main-container .main .download .download-close-btn-container {
   font-size: calc(20px + .1vw);
   font-family: PJSB;
   text-transform: uppercase;
   cursor: pointer;
-  color: #046ED0;
-  border: 3px solid #046ED0;
   border-radius: 999999px;
   padding: 1em 3em;
   text-align: center;
+  margin: 0 .5em;
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+.main-container .pages-and-main-container .main .download .downloadable:hover, .main-container .pages-and-main-container .main .download .download-close-btn-container:hover {
+  -webkit-transition: 0s;
+  transition: 0s;
+  color: #000000;
+}
+
+.main-container .pages-and-main-container .main .download .downloadable {
+  color: #d3b2ff;
+  border: 3px solid #d3b2ff;
 }
 
 .main-container .pages-and-main-container .main .download .downloadable:hover {
   -webkit-transition: 0s;
   transition: 0s;
-  color: #000000;
-  background-color: #046ED0;
+  background-color: #d3b2ff;
+}
+
+.main-container .pages-and-main-container .main .download .download-close-btn-container {
+  opacity: .3;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+.main-container .pages-and-main-container .main .download .download-close-btn-container:hover {
+  opacity: 1;
+  -webkit-transition: 0s;
+  transition: 0s;
+  background-color: #ffffff;
 }
 
 .main-container .pages-and-main-container .main .loading .movable-sub-container {
@@ -825,7 +867,7 @@ body {
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(3) div span {
   font-family: PJSB;
-  color: #046ED0;
+  color: #d3b2ff;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) {
@@ -836,7 +878,7 @@ body {
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) span:nth-of-type(1) {
   font-size: calc(40px + .1vw);
   font-family: PJSB;
-  color: #046ED0;
+  color: #d3b2ff;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) span:nth-of-type(2) {
@@ -847,7 +889,7 @@ body {
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) span:nth-of-type(3), .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) span:nth-of-type(4), .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) span:nth-of-type(5), .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) span:nth-of-type(6) {
   font-size: calc(25px + .1vw);
   font-family: PJSB;
-  color: #046ED0;
+  color: #d3b2ff;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(4) p {
@@ -874,7 +916,7 @@ body {
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(5) span:nth-of-type(1) {
   font-size: calc(40px + .1vw);
   font-family: PJSB;
-  color: #046ED0;
+  color: #d3b2ff;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(5) span:nth-of-type(2) {
@@ -885,7 +927,7 @@ body {
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(5) span:nth-of-type(3), .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(5) span:nth-of-type(4), .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(5) span:nth-of-type(5) {
   font-size: calc(25px + .1vw);
   font-family: PJSB;
-  color: #046ED0;
+  color: #d3b2ff;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(5) p {
@@ -912,26 +954,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(6) a {
-  font-family: PJSB;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: #046ED0;
-  border: 3px solid #046ED0;
-  border-radius: 999999px;
-  padding: 1em 3em;
-  text-align: center;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-.main-container .pages-and-main-container .main .tutorial .pages-container .pages .page:nth-of-type(6) a:hover {
-  -webkit-transition: 0s;
-  transition: 0s;
-  color: #000000;
-  background-color: #046ED0;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .page-nav {
@@ -1019,6 +1041,112 @@ body {
   pointer-events: auto;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.main-container .pages-and-main-container .main .ays-darken {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-container .pages-and-main-container .main .ays-darken.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure {
+  background-color: #f81a1a;
+  position: fixed;
+  bottom: 0;
+  z-index: 999999;
+  width: 100vw;
+  padding: 1em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(20px + .1vw);
+  font-family: PJSL;
+  overflow: hidden;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure.active {
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  -webkit-transition: .3s .1s;
+  transition: .3s .1s;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure .title {
+  font-family: PJSB;
+  margin-bottom: 1em;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1em;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure .ays-btn {
+  padding: .3em 1.5em;
+  border-radius: 999999px;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  margin: 0 .5em;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure .ays-btn:hover {
+  font-weight: bold;
+  -webkit-transition: 0s;
+  transition: 0s;
+  color: #f81a1a;
+  background-color: #ffffff;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure .ays-yes {
+  opacity: .7;
+}
+
+.main-container .pages-and-main-container .main .are-you-sure .ays-yes:hover {
+  opacity: 1;
 }
 
 .lds-grid {
