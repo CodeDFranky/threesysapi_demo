@@ -7,12 +7,9 @@ wich may be accessed through:
 https://threesysapi.up.railway.app/
 
 ### developed by:
-### Don Franco Ramos
-### Geezan Loi Esteron
-### Ken Nicholson Cruda
+Don Franco Ramos
+Geezan Loi Esteron
+Ken Nicholson Cruda
 
-#### for:
-#### Computer Science Research Project
-
-#### at:
-#### Adamson University
+#### for: Computer Science Research Project
+#### at: Adamson University
