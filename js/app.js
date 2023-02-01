@@ -122,9 +122,9 @@ let are_you_sure_container = document.querySelector(".are-you-sure");
 
 let ays_btns = document.querySelectorAll(".ays-btn");
 
-let survey_btn = document.querySelector(".survey-btn");
+// let survey_btn = document.querySelector(".survey-btn");
 
-let survey_btn_hover_el = document.querySelector(".survey-btn-hover-el");
+// let survey_btn_hover_el = document.querySelector(".survey-btn-hover-el");
 
 function are_you_sure() {
     ays_darken.classList.toggle("active");
@@ -155,14 +155,14 @@ about_btn.onclick = () => {
 }
 
 
-survey_btn.onmousemove = (e) => {
-    he_w = survey_btn_hover_el.offsetWidth;
-    he_h = survey_btn_hover_el.offsetHeight;
-    x = e.clientX;
-    y = e.clientY;
-    survey_btn_hover_el.style.left = `${x - he_w}px`;
-    survey_btn_hover_el.style.top = `${y + 20}px`;
-}
+// survey_btn.onmousemove = (e) => {
+//     he_w = survey_btn_hover_el.offsetWidth;
+//     he_h = survey_btn_hover_el.offsetHeight;
+//     x = e.clientX;
+//     y = e.clientY;
+//     survey_btn_hover_el.style.left = `${x - he_w}px`;
+//     survey_btn_hover_el.style.top = `${y + 20}px`;
+// }
 
 gen_form.addEventListener("submit", async function (e) {
     e.preventDefault();
