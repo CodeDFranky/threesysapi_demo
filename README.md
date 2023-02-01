@@ -13,3 +13,5 @@ Ken Nicholson Cruda
 
 #### for: Computer Science Research Project
 #### at: Adamson University
+
+© 2022
