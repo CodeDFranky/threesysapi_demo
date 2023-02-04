@@ -278,5 +278,5 @@ ays_btns.forEach((btn, i) => {
     }
 })
 
-check_current_page();
-about_btn.click();
+// check_current_page();
+// about_btn.click();

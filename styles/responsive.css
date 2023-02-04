@@ -1,0 +1,83 @@
+@media only screen and (max-width: 950px) {
+  .main-container {
+    padding: 0;
+  }
+  .page {
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  .threesys-header {
+    padding: 1em;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .choice {
+    font-size: calc(1.2rem + .1vw) !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .download div:nth-of-type(2) {
+    display: -ms-grid !important;
+    display: grid !important;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    gap: 1em;
+  }
+  .page-nav .current-page-indicator {
+    border: none !important;
+  }
+  .page-nav .pn-btn {
+    -webkit-transition: 0s !important;
+    transition: 0s !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    font-weight: normal !important;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .choices {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  form:nth-of-type(1) {
+    place-items: center;
+    -ms-grid-rows: min-content 1fr 1fr !important;
+        grid-template-rows: -webkit-min-content 1fr 1fr !important;
+        grid-template-rows: min-content 1fr 1fr !important;
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+        grid-template-areas: "file" "location" "submit" !important;
+  }
+  form:nth-of-type(1) #gen-submit {
+    -ms-flex-item-align: center !important;
+        -ms-grid-row-align: center !important;
+        align-self: center !important;
+  }
+  form:nth-of-type(2) {
+    place-items: center;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

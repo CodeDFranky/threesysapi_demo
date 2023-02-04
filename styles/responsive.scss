@@ -1,0 +1,75 @@
+@media only screen and (max-width: 950px) {
+    .main-container {
+        padding: 0;
+    }
+
+    .page {
+        box-shadow: none !important;
+    }
+
+    .threesys-header {
+        padding: 1em;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .choice {
+        font-size: calc(1.2rem + .1vw) !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .download  div:nth-of-type(2){
+        display: grid !important;
+        grid-template-rows: 1fr 1fr;
+        gap: 1em;
+    }
+
+    .page-nav {
+        .current-page-indicator{
+            border: none !important;
+
+        }
+        .pn-btn {
+            transition: 0s !important;
+            border: none !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, .2) !important;
+            font-weight: normal !important;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .choices {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form {
+        &:nth-of-type(1) {
+            place-items: center;
+            grid-template-rows: min-content 1fr 1fr !important;
+            grid-template-columns: 1fr !important;
+            grid-template-areas:
+            "file"
+            "location"
+            "submit" !important;
+
+            #gen-submit {
+                align-self: center !important;
+            }
+        }
+
+        &:nth-of-type(2) {
+            place-items: center;
+        }
+    }
+}
