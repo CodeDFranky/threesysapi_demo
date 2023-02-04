@@ -1051,7 +1051,7 @@ body {
 .main-container .pages-and-main-container .main .are-you-sure {
   background-color: #f81a1a;
   position: fixed;
-  bottom: 0;
+  top: 0;
   z-index: 999999;
   width: 100vw;
   padding: 1em 2em;
