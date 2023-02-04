@@ -631,7 +631,8 @@ body {
 
           .pages-container {
             display: grid;
-            grid-template-rows: 1fr min-content;
+            // grid-template-rows: 1fr min-content;
+            grid-template-rows: min-content 1fr;
 
             .pages {
               width: 100%;
@@ -765,7 +766,8 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              margin-top: 1em;
+              // margin-top: 1em;
+              margin-bottom: 1em;
 
               .current-page-indicator {
                 padding: .5em 1em;

@@ -762,9 +762,9 @@ body {
 .main-container .pages-and-main-container .main .tutorial .pages-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr min-content;
-      grid-template-rows: 1fr -webkit-min-content;
-      grid-template-rows: 1fr min-content;
+  -ms-grid-rows: min-content 1fr;
+      grid-template-rows: -webkit-min-content 1fr;
+      grid-template-rows: min-content 1fr;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .pages {
@@ -954,7 +954,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .main-container .pages-and-main-container .main .tutorial .pages-container .page-nav .current-page-indicator {
