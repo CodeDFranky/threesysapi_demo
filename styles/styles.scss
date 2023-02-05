@@ -388,7 +388,7 @@ body {
               font-size: calc(.8rem + .1vw);
               font-family: PJSEL;
               cursor: pointer;
-              background-color: #000000;
+              background-color: transparent;
               align-items: center;
               position: relative;
               margin-top: .5em;
@@ -606,7 +606,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: end;
-            margin-bottom: 1em;
+            // margin-bottom: 1em;
 
             .tutorial-close-btn-container {
               width: min-content;
@@ -766,7 +766,6 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              // margin-top: 1em;
               margin-bottom: 1em;
 
               .current-page-indicator {

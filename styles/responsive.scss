@@ -3,12 +3,19 @@
         padding: 0;
     }
 
+    .page-nav {
+        margin-top: 1em;
+        margin-bottom: 0 !important;
+    }
+
     .page {
         box-shadow: none !important;
+        padding: 1.5em !important;
     }
 
     .threesys-header {
-        padding: 1em;
+        padding-top: 1.25em;
+        padding-left: 1.25em;
     }
 }
 
@@ -19,6 +26,12 @@
 }
 
 @media only screen and (max-width: 500px) {
+    .main-sub-container > .nav {
+        align-items: start !important;
+
+        padding-top: 6em;
+    }
+
     .download  div:nth-of-type(2){
         display: grid !important;
         grid-template-rows: 1fr 1fr;
