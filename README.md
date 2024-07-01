@@ -3,7 +3,7 @@
 ## demo url: https://threesysapidemo.up.railway.app/
 
 ### this is a demo web application making use of the novel threesysapi.
-wich may be accessed through:
+which may be accessed through:
 https://threesysapi.up.railway.app/
 
 ### developed by:
